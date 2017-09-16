@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>07d5f2db-2219-48e7-950f-09f2fff7430e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>StatModelling.py</StartupFile>
+    <StartupFile>Lab1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Lab3.py" />
+    <Compile Include="Lab4.py" />
+    <Compile Include="Lab2.py" />
+    <Compile Include="Lab1.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="StatModelling.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
