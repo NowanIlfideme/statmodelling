@@ -231,7 +231,7 @@ def z1(m, eps=None):
 
 if __name__ == "__main__":
 
-    res1 = z1(24, 0.05)
+    res1 = z1(32, 0.05)
 
 
     print("Finished.")

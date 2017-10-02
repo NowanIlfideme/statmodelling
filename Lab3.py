@@ -3,6 +3,8 @@
 Author: Anatoly Makarevich
 Laboratory work #3
 
+
+
 """
 
 
