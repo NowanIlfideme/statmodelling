@@ -3,6 +3,10 @@
 Author: Anatoly Makarevich
 Laboratory work #2
 
+5 discrete distributions (Bernoulli, Binomial, Geometric, Poisson, Discrete Uniform)
+
+Pearson chi-squared test for each
+
 """
 
 from Lab1 import RandGenerator
@@ -14,8 +18,8 @@ import scipy.stats as ss
 # 1. Bernoulli
 # 2. Binomial
 # 3. Geometric
-# 4. Negative binomial
-# 5. Hypergeometric
+# 4. Negative binomial <- not done
+# 5. Hypergeometric <- not done
 # 6. Poisson
 # 7. Discrete uniform
 
@@ -127,21 +131,17 @@ class GeometricGen(RandGenerator):
 
     pass
 
+"""
+# Not implemented!
+
 class NegBinomialGen(RandGenerator):
-
-    # TODO: Implement!
-
-    def __init__(self, m=1, p=0.5):
-        self.m = m
-        self.p = p
-
-        pass
 
     pass
 
 class HypergeometricGen(RandGenerator):
 
     pass
+"""
 
 class PoissonGen(RandGenerator):
 
@@ -193,6 +193,8 @@ class DiscreteUniformGen(RandGenerator):
         return chisq_test(bins_theory, bins_actual, eps)
 
     pass
+
+
 
 
 
