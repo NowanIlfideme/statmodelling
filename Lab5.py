@@ -60,7 +60,7 @@ class Lab18(object):
         def gen_problem(self):
             """Simulate generating a problem."""
         
-            self.P("Generating problem @ %f.02" % self.env.now)
+            self.P("@ %04.02f Generating problem " % self.env.now)
             duration = random.expovariate(1.0/self.t)
             yield self.env.timeout(duration) # Generate next problem
             pass
@@ -69,10 +69,10 @@ class Lab18(object):
             """Simulate a request to solve the problem."""
         
             with self.resource.request() as req:
-                self.P("Requesting terminal access @ %f.02" % self.env.now)
+                self.P("@ %04.02f Requesting terminal access " % self.env.now)
                 yield req # Request access
 
-                self.P("Requesting solution @ %f.02" % self.env.now)
+                self.P("@ %04.02f Requesting solution" % self.env.now)
                 duration = random.expovariate(1.0/self.mu)
                 yield self.env.timeout(duration) # Do calculation
             pass
@@ -92,14 +92,14 @@ class Lab18(object):
             Note that extra time is required to transfer data."""
 
             with self.resource.request() as req:
-                self.P("Requesting terminal access @ %f.02" % self.env.now)
+                self.P("@ %04.02f Requesting terminal access" % self.env.now)
                 yield req # Request access
 
-                self.P("Moving data @ %f.02" % self.env.now)
+                self.P("@ %04.02f Moving data" % self.env.now)
                 transf_time = random.randint(self.a, self.b)
                 yield self.env.timeout(transf_time) # Transfer data
 
-                self.P("Requesting solution @ %f.02" % self.env.now)
+                self.P("@ %04.02f Requesting solution" % self.env.now)
                 duration = random.expovariate(1.0/self.mu)
                 yield self.env.timeout(duration) # Do calculation
             pass
@@ -141,19 +141,13 @@ class Lab18(object):
         return self
     pass
 
-l18 = Lab18().run(3600)
-l18.output()
 
-z37 = """
- ЗАДАНИЕ 37. Моделирование процесса функционирования участка контроля 
- Изделия поступают из цеха на контроль через каждые а±δ мин. (здесь и далее равномерный закон). 
- Каждый из 2-х контролеров выполняет свои функции  мин. После контроля примерно 75% изделий 
- направляется на склад, а остальные – к наладчику для доводки. Наладчик выполняет свои функции b±β c±γ мин.,
- и возвращает изделия на повторный контроль. На участке контроля фиксируется число изделий, 
- направленных на склад и прошедших наладчика. После окончания смены изделия из цеха не поступают, 
- а изделия из очереди обслуживаются контролерами.
- 
-Разработать GPSSV – модель для анализа процесса функционирования участка контроля в течение смены, т.е. 8 часов. 
-Первоначальный перечень экспериментов: a=5, δ=2, b=9, β=3, c=30, γ=10.
-"""
+debug = True
+
+l18 = Lab18().run(3600)
+
+print("Average gen time: %0.2f" % np.mean(l18.gen_times))
+print("Average solve time: %0.2f" % np.mean(l18.solve_times))
+
+l18.output()
 

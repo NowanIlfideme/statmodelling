@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>07d5f2db-2219-48e7-950f-09f2fff7430e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Lab4.py</StartupFile>
+    <StartupFile>Lab5.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -28,6 +28,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Lab5.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lab6.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="StatModelling.py" />
