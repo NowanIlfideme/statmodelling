@@ -205,9 +205,9 @@ def mc_solve_linsystem(A, f, l=10000, N=1000):
 def ex3(l=10, N=100):
     """Solve system Ax+f=x for x, given:
     A = 
-     1.2 -0.3  0.4
-     0.4  0.7 -0.2
-     0.2 -0.3  0.9
+     -0.2  0.3 -0.4
+     -0.4  0.3  0.2
+     -0.2  0.3  0.1
     f = (-4, 2, 0)^T
     """
 
@@ -274,7 +274,7 @@ if __name__ == "__main__":
     #ex2(def_n)
 
     #print("*****\nLinear algebra:")
-    #ex3(l=def_n, N=100)
+    ex3(l=def_n, N=100)
 
     print("*****\nAreas:")
     #ex4(def_n)
